@@ -6,7 +6,7 @@
 
 int[] array = new int[4];
 for (int i = 0; i < array.Length; i++)
-    array[i] = new Random().Next(-99, 99);
+    array[i] = new Random().Next(-99, 100);
 
 int k = 0;
 
