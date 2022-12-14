@@ -1,20 +1,23 @@
-﻿/* Задача 36: Задайте одномерный массив, заполненный случайными числами. 
-Найдите сумму элементов, стоящих на нечётных позициях.
+﻿/* Задача 38: Задайте массив вещественных чисел. 
+Найдите разницу между максимальным и минимальным элементов массива.
 
-[3, 7, 23, 12] -> 19
-[-4, -6, 89, 6] -> 0 */
+[3 7 22 2 78] -> 76     */
 
-int[] array = new int[4];
+double[] array = new double[5];
 for (int i = 0; i < array.Length; i++)
-    array[i] = new Random().Next(-99, 99);
+    array[i] = new Random().Next(100);
 
-int k = 0;
+double max = array[0];
+double min = array[0];
 
-for (int i = 1; i < array.Length; i += 2)
-    k += array[i];
+for (int i = 0; i < array.Length; i++)
+    if (array[i] > max)
+        max = array[i];
+    else if (array[i] < min)
+        min = array[i];
 
 Console.Write("[");
 for (int i = 0; i < array.Length; i++)
-    Console.Write($"{array[i]}, ");
+    Console.Write($"{array[i]} ");
 Console.Write("]");
-Console.Write($" -> {k}");
+Console.Write($" -> {max - min}");
